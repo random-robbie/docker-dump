@@ -45,6 +45,6 @@ apt-get autoremove && \
 rm -rf /var/lib/apt/lists/*
 
 
-EXPOSE 8080:8080 6080:6080 5900:5900
+EXPOSE 80:6080
 
 ENTRYPOINT ["/startup.sh"]
