@@ -30,7 +30,7 @@ RUN git clone https://github.com/kanaka/websockify websockify
 WORKDIR /root
 
 
-RUN https://portswigger.net/burp/releases/download?product=free&version=1.7.27&type=jar - O  burpsuite_free_v1.7.27.jar
+RUN https://portswigger.net/burp/releases/download?product=free&version=1.7.27&type=jar -o  burpsuite_free_v1.7.27.jar
 
 RUN wget https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9.1.13.0.jar
 RUN wget http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar -o jython-standalone-2.7.0.jar
