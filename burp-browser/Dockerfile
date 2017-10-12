@@ -34,7 +34,7 @@ RUN wget "https://portswigger.net/burp/releases/download?product=free&version=1.
 RUN wget "https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9.1.13.0.jar"
 RUN wget "http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar" -o jython-standalone-2.7.0.jar
 
-#Clean up to make image slightly smalled
+# Clean up to make image slightly smalled
 RUN apt-get autoclean 
 RUN apt-get autoremove
 RUN rm -rf /var/lib/apt/lists/*
@@ -43,8 +43,8 @@ RUN rm -rf /var/lib/apt/lists/*
 ENV USER root
 # Set default password
 COPY password.txt .
-RUN cat password.txt password.txt | vncpasswd && \
-  rm password.txt
+RUN cat password.txt | vncpasswd
+RUN rm password.txt
 # Expose VNC port
 EXPOSE 5901
 
