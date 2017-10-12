@@ -35,8 +35,8 @@ RUN wget "https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9
 RUN wget "http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar" -o jython-standalone-2.7.0.jar
 
 #Clean up to make image slightly smalled
-RUN apt-get autoclean && \
-RUN apt-get autoremove && \
+RUN apt-get autoclean 
+RUN apt-get autoremove
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set user for VNC server (USER is only for build)
