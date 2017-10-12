@@ -13,8 +13,6 @@ python \
 python-numpy \
 unzip \
 menu \
-geany \
-openbox \
 net-tools \
 geany \
 menu \
