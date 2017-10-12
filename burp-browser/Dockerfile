@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# Update and grab all the bits needed
 RUN apt-get update -y && \
 apt-get install -y \
 git \
@@ -28,11 +29,12 @@ lxterminal \
 tightvncserver \
 xrdp
 
-
+# Grab Burp and Jython and Jruby
 RUN wget "https://portswigger.net/burp/releases/download?product=free&version=1.7.27&type=jar" -o  burpsuite_free_v1.7.27.jar
 RUN wget "https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9.1.13.0.jar"
 RUN wget "http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar" -o jython-standalone-2.7.0.jar
 
+#Clean up to make image slightly smalled
 apt-get autoclean && \
 apt-get autoremove && \
 rm -rf /var/lib/apt/lists/*
@@ -51,11 +53,4 @@ RUN sed -i '0,/port=-1/{s/port=-1/port=5901/}' /etc/xrdp/xrdp.ini
 
 # Copy VNC script that handles restarts
 COPY vnc.sh /opt/
-CMD ["/opt/vnc.sh"]
-
-
-
-
-EXPOSE 80:6080
-
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/opt/vnc.sh"]
