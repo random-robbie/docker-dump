@@ -43,7 +43,7 @@ RUN rm -rf /var/lib/apt/lists/*
 ENV USER root
 # Set default password
 COPY password.txt .
-RUN cat password.txt | vncpasswd
+RUN cat password.txt password.txt | vncpasswd
 RUN rm password.txt
 # Expose VNC port
 EXPOSE 5901
