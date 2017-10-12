@@ -32,8 +32,8 @@ WORKDIR /root
 
 RUN wget "https://portswigger.net/burp/releases/download?product=free&version=1.7.27&type=jar" -o  burpsuite_free_v1.7.27.jar
 
-RUN wget https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9.1.13.0.jar
-RUN wget http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar -o jython-standalone-2.7.0.jar
+RUN wget "https://s3.amazonaws.com/jruby.org/downloads/9.1.13.0/jruby-complete-9.1.13.0.jar"
+RUN wget "http://search.maven.org/remotecontent?filepath=org/python/jython-standalone/2.7.0/jython-standalone-2.7.0.jar" -o jython-standalone-2.7.0.jar
 
 WORKDIR /
 ADD startup.sh startup.sh
