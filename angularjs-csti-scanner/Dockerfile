@@ -9,6 +9,9 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 
+ADD scan /bin/scan
+RUN chmod 777 /bin/scan
+
 RUN pip install git+https://github.com/tijme/angularjs-csti-scanner.git
 
 
