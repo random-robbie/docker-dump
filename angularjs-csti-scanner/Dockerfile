@@ -12,5 +12,4 @@ ENV LANGUAGE en_US:en
 RUN pip install git+https://github.com/tijme/angularjs-csti-scanner.git
 
 
-
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
