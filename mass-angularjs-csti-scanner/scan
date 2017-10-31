@@ -1,0 +1,2 @@
+#!/bin/bash
+acstis -c -vp -iic -d "$1"

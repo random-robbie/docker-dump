@@ -1,0 +1,13 @@
+for url in `cat $1`; do
+  echo "
+
+
+[*] Now Checking the following URL: $url [*]
+
+
+
+
+"
+	/bin/scan $url
+	sleep 5
+done

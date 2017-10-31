@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "[*] Grabbing Subdomains for $1 [*]"
+python /Sublist3r/sublist3r.py --verbose --output /angularjs-csti-scanner/domains.txt -b -d $1
+
+echo "[*] Converting from DOS to Unix Format Domains.txt [*]"
+dos2unix /angularjs-csti-scanner/domains.txt
+
+echo "[*]Adding HTTPS prefix to subdomains [*]"
+awk '{print "https://"$0}' /angularjs-csti-scanner/domains.txt >> /angularjs-csti-scanner/domains-https.txt
+
+echo "[*] Scanning All Subdoamins for AngularJS XSS [*]"
+/bin/mass-scan /angularjs-csti-scanner/domains-https.txt
