@@ -1,2 +1,2 @@
 #!/bin/bash
-acstis -c -vp -iic -d "$1"
+acstis -c -vp -iic -vrl $1.log -d "$1"
