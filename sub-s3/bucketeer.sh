@@ -59,8 +59,8 @@ test_bucket() {
     fi
     echo ""
   elif [[ $result == "200" ]]; then
+	
     echo "aws s3 ls s3://$bucket_name"
-
     aws s3 ls s3://$bucket_name
 
     if [[ $? == 0 ]]; then
@@ -74,8 +74,8 @@ test_bucket() {
 check_prefix() {
   local bucket_part="$1"
 
-  test_bucket "$NAME-$bucket_part"
-  
+  test_bucket "$bucket_part"
+
 }
 
 print_results() {

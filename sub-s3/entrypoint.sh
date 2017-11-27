@@ -7,6 +7,6 @@ fi
 
 
 
-python /Sublist3r/sublist3r.py -d $DOMAIN -p 80,443 -v -o $DOMAIN.txt
-bash /Sublist3r/bucketeer.sh $DOMAIN.txt
+python /Sublist3r/sublist3r.py -d $DOMAIN -p 80,443 -v -o $DOMAIN
+bash /Sublist3r/bucketeer.sh $DOMAIN
 bash

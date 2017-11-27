@@ -6,11 +6,7 @@ It uses a modified version of teh_s3_bucketeers by Tom de Vries https://github.c
 
 ## Installation
 
-Install `awscli`:
 
-```
-apt install awscli
-```
 
 
 
