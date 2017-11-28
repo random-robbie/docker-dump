@@ -17,7 +17,7 @@ if [[ -z $@ ]]; then
 fi
 
 AWS_CREDENTIALS_SETUP_DOCUMENTATION_URL="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html#setup-credentials-setting"
-AWS_CREDENTIALS_FILE=~/.aws/credentials
+AWS_CREDENTIALS_FILE=/root/.aws/credentials
 
 ensure_aws_credentials() {
   if [[ ! -e $AWS_CREDENTIALS_FILE ]]; then
