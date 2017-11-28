@@ -9,7 +9,7 @@ fi
 
 
 echo "[*] Now Scanning for Subdomains for $DOMAIN [*]"
-python /Sublist3r/sublist3r.py -d $DOMAIN -p 80,443 -v -o $DOMAIN
+python /Sublist3r/sublist3r.py -b -d $DOMAIN -p 80,443 -v -o $DOMAIN
 echo "[*] Now Scanning for S3 Buckets for $DOMAIN [*]"
 bash /Sublist3r/bucketeer.sh $DOMAIN
 bash
