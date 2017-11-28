@@ -96,6 +96,6 @@ for NAME in $@
 do
   RESULT_FILE="results-$NAME-$(date +%Y-%m-%d_%H:%M).txt"
   test_bucket $NAME
-  while read line ; do check_prefix $line ; done < ./domains.txt
+  while read line ; do check_prefix $line ; done < ./$DOMAIN
   print_results
 done

@@ -1,11 +1,13 @@
 #!/bin/bash
-if [ ! -f ~/.aws/credentials ]; then
-	mkdir ~/.aws/
-	touch ~/.aws/credentials
-    echo "[default]" >> ~/.aws/credentials
-	echo "aws_access_key_id = $AWS_ACC" >> ~/.aws/credentials
-	echo "aws_secret_access_key = $AWS_SEC" >> ~/.aws/credentials
+if [ ! -f /root/.aws/credentials: ]; then
+	echo "Creating /root/.aws/"
+	mkdir -p /root/.aws/
+	echo "Creating creds file."
+    echo "[default]" >> /root/.aws/credentials
+	echo "aws_access_key_id = $AWS_ACC" >> /root/.aws/credentials
+	echo "aws_secret_access_key = $AWS_SEC" >> /root/.aws/credentials
 fi
+
 
 
 echo "[*] Now Scanning for Subdomains for $DOMAIN [*]"
