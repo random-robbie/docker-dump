@@ -3,6 +3,7 @@
 This tool will check for public S3 buckets using the names of domains / subdomains of the provided domain.
 
 It uses a modified version of teh_s3_bucketeers by Tom de Vries https://github.com/tomdev/teh_s3_bucketeers
+it uses Plazmaz's Sublist3r to find the sub domains
 
 ## Installation
 
@@ -36,7 +37,7 @@ A result file named `results-<target>-<timestamp>.txt` will be created when an a
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/tomdev/teh_s3_bucketeers.
+Bug reports and pull requests are welcome on GitHub at https://github.com/random-robbie/docker-dump/tree/master/sub-s3
 
 
 ## License
