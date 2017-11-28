@@ -51,7 +51,7 @@ test_bucket() {
     echo "403: Unauthorized. Testing with authenticated user:"
     echo "aws s3 ls s3://$bucket_name"
 
-    aws s3 cp poc.txt s3://$bucket_name/poc.txt
+    aws s3 cp poc.txt s3://$bucket_name/poc.txt --acl public-read
 
     if [[ $? == 0 ]]; then
         # Yay, we can list the bucket as unauthenticated user!
@@ -61,7 +61,7 @@ test_bucket() {
   elif [[ $result == "200" ]]; then
 	
     echo "aws s3 ls s3://$bucket_name"
-    aws s3 cp poc.txt s3://$bucket_name/poc.txt
+    aws s3 cp poc.txt s3://$bucket_name/poc.txt --acl public-read
 
     if [[ $? == 0 ]]; then
         # Yay, we can access the bucket as authenticated user!
