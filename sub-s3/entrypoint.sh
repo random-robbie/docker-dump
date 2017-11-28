@@ -1,5 +1,7 @@
 #!/bin/bash
 if [ ! -f ~/.aws/credentials ]; then
+	mkdir ~/.aws/
+	touch ~/.aws/credentials
     echo "[default]" >> ~/.aws/credentials
 	echo "aws_access_key_id = $AWS_ACC" >> ~/.aws/credentials
 	echo "aws_secret_access_key = $AWS_SEC" >> ~/.aws/credentials
