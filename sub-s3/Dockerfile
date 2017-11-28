@@ -12,7 +12,8 @@ RUN git clone https://github.com/Plazmaz/Sublist3r.git
 WORKDIR /Sublist3r/
 RUN pip install -r requirements.txt
 RUN pip install termcolor eventlet
-RUN wget https://raw.githubusercontent.com/random-robbie/docker-dump/master/sub-s3/bucketeer.sh
+ADD bucketeer.sh bucketeer.sh
 ADD entrypoint.sh /bin/entrypoint.sh
 RUN chmod 777 /bin/entrypoint.sh
+RUN chmod 777 bucketeer.sh
 ENTRYPOINT ["/bin/entrypoint.sh"]
