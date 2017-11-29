@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 @random_robbie was here... secure your bucket please!
+=======
+Secure your bucket...@
+>>>>>>> origin/master

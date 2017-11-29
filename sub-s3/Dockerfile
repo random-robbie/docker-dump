@@ -13,6 +13,7 @@ WORKDIR /Sublist3r/
 RUN pip install -r requirements.txt
 RUN pip install termcolor eventlet
 ADD bucketeer.sh bucketeer.sh
+ADD poc.txt poc.txt
 ADD entrypoint.sh /bin/entrypoint.sh
 RUN chmod 777 /bin/entrypoint.sh
 RUN chmod 777 bucketeer.sh
