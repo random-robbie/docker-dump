@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "[*] Scanning Domain for Subdomains [*]"
+python /go/src/Sublist3r/sublist3r.py -d $1 -b --verbose --output /go/src/subjack/domains.txt
+echo "[*] Converting text file to unix... no idea why? [*]"
+dos2unix /go/src/subjack/domains.txt
+echo "[*] Running Subjack [*]"
+/go/src/subjack/subjack -w /go/src/subjack/domains.txt -t 100 -timeout 30 -o results.txt -https
