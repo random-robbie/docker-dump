@@ -12,6 +12,7 @@ RUN git clone https://github.com/Plazmaz/Sublist3r.git
 WORKDIR /Sublist3r/
 RUN pip install -r requirements.txt
 RUN pip install termcolor eventlet
+WORKDIR /
 RUN git clone https://github.com/sa7mon/S3Scanner.git
 ADD entrypoint.sh /bin/entrypoint.sh
 RUN chmod 777 /bin/entrypoint.sh
