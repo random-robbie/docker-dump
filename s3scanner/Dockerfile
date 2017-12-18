@@ -1,4 +1,4 @@
-FROM python:3.4
+FROM python:2.7
 LABEL maintainer="txt3rob@gmail.com"
 
 # update
