@@ -29,7 +29,7 @@ aws_secret_access_key = <secret>
 You can test multiple targets at the same time, use a space as a delimiter.
 
 ```
-docker run txt3rob-subs3 -e DOMAIN=doamin.com -e AWS_ACC=aws_access_key_id -e AWS_SEC=aws_secret_access_key
+docker run it -e DOMAIN=domain.com -e AWS_ACC=aws_access_key_id -e AWS_SEC=aws_secret_access_key txt3rob/sub-s3
 ```
 
 A result file named `results-<target>-<timestamp>.txt` will be created when an accessible bucket has been found.

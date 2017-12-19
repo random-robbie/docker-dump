@@ -51,7 +51,7 @@ test_bucket() {
     echo "403: Unauthorized. Testing with authenticated user:"
     echo "aws s3 ls s3://$bucket_name"
 
-    aws s3 cp poc.txt s3://$bucket_name/poc.txt --acl public-read
+    aws s3 cp /Sublist3r/poc.txt s3://$bucket_name/ --acl public-read
 
     if [[ $? == 0 ]]; then
         # Yay, we can list the bucket as unauthenticated user!
@@ -60,8 +60,8 @@ test_bucket() {
     echo ""
   elif [[ $result == "200" ]]; then
 	
-    echo "aws s3 ls s3://$bucket_name"
-    aws s3 cp poc.txt s3://$bucket_name/poc.txt --acl public-read
+    echo "aws s3 cp poc.txt s3://$bucket_name --acl public-read"
+    aws s3 cp poc.txt s3://$bucket_name --acl public-read
 
     if [[ $? == 0 ]]; then
         # Yay, we can access the bucket as authenticated user!
@@ -96,6 +96,6 @@ for NAME in $@
 do
   RESULT_FILE="results-$NAME-$(date +%Y-%m-%d_%H:%M).txt"
   test_bucket $NAME
-  while read line ; do check_prefix $line ; done < ./$DOMAIN
+  while read line ; do check_prefix $line ; done < /Sublist3r/$DOMAIN.txt
   print_results
 done
