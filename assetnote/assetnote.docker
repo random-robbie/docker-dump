@@ -1,0 +1,17 @@
+FROM python:2.7.14-stretch
+RUN apt-get update && apt-get install python-dev bash default-libmysqlclient-dev python-bcrypt cron -y
+ADD ./files/cron /etc/cron.d/threatcrowd
+RUN chmod 0644 /etc/cron.d/threatcrowd
+RUN touch /var/log/cron.log
+RUN mkdir -p /home/deploy/
+WORKDIR /home/deploy/
+RUN git clone https://github.com/infosec-au/assetnote
+WORKDIR /home/deploy/assetnote/
+RUN pip install -r requirements.txt
+RUN pip install flask_sqlalchemy flask_seasurf flask_security
+ADD ./files/entrypoint.sh /home/deploy/assetnote/entrypoint.sh
+ADD ./files/config.py /home/deploy/assetnote/config.py
+ADD ./files/assetnote.py /home/deploy/assetnote/assetnote.py
+RUN chmod -R 777 /home/deploy/
+ENTRYPOINT ["/home/deploy/assetnote/entrypoint.sh"]
+#CMD ["cron && tail -f /var/log/cron.log"]

@@ -1,0 +1,1 @@
+*/11 * * * * /usr/bin/timeout 30m python /home/deploy/assetnote/managers/threatcrowd.py > /home/deploy/tc_log.txt 2>&1

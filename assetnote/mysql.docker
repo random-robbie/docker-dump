@@ -1,0 +1,2 @@
+FROM mysql:latest
+ADD /db/assetnote.sql /docker-entrypoint-initdb.d/assetnote.sql

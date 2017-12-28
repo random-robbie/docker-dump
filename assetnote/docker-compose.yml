@@ -1,0 +1,39 @@
+version: '3'
+services:
+    webserver:
+        container_name: assetnote-webserver
+        restart: always
+        build:
+            context: .
+            dockerfile: assetnote.docker
+        ports:
+            - 93:80
+        links:
+            - database
+            
+    database:
+        container_name: assetnote-database
+        restart: always
+        build:
+            context: .
+            dockerfile: mysql.docker
+        environment:
+            - "MYSQL_ROOT_PASSWORD=testing"
+            - "MYSQL_DATABASE=docker_assetnote"
+            - "MYSQL_USER=docker_assetnote"
+            - "MYSQL_PASSWORD=testing"
+           
+        ports:
+           - 3306
+
+    phpmyadmin:
+        container_name: assetnote-pma
+        image: phpmyadmin/phpmyadmin
+        links:
+            - database
+        ports:
+            - 8186:80
+        environment:
+            - "PMA_HOST=assetnote-database"
+            - "PMA_USER=docker_assetnote"
+            - "PMA_PASSWORD=testing"
