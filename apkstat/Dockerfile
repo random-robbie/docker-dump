@@ -17,6 +17,7 @@ WORKDIR /APKStat/
 RUN wget "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -O /usr/local/bin/apktool
 RUN wget "https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.4.jar" -O /usr/local/bin/apktool.jar
 RUN chmod 777 /usr/local/bin/apktool
+RUN chmod 777 apkstat.py
 
 #Entry to bash then type apkstat com.whatever and it downloads.
 ENTRYPOINT ["/bin/bash"]
