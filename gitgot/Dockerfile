@@ -1,4 +1,4 @@
-ROM python:python3.6
+ROM python:3.6
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install libfuzzy-dev nano ssdeep -y
 RUN git clone https://github.com/BishopFox/GitGot.git
