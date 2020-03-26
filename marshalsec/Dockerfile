@@ -4,4 +4,5 @@ WORKDIR /sploit/
 RUN git clone https://github.com/mbechler/marshalsec.git
 WORKDIR /sploit/marshalsec/
 RUN mvn -f /sploit/marshalsec/pom.xml clean package -DskipTests
+WORKDIR /sploit/
 CMD ["bash"]
