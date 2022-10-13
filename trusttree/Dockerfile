@@ -1,10 +1,10 @@
-FROM python:3.8-stretch
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install graphviz libgraphviz-dev pkg-config -y
-WORKDIR /root/
-RUN git clone https://github.com/mandatoryprogrammer/TrustTrees.git
-WORKDIR /root/TrustTrees/
-RUN pip install -r requirements.txt
-RUN pip install -r requirements-dev.txt
+FROM python:3.8
+WORKDIR /root
+ENV HOME /root
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get install graphviz graphviz-dev pkg-config -y
+RUN pip install pygraphviz
 RUN pip install TrustTrees
-CMD ["trusttrees.py --target $1"]
+CMD ["trusttrees"]
