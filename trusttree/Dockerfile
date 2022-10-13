@@ -1,4 +1,4 @@
-FROM python:2.7-stretch
+FROM python:3.8-stretch
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install graphviz libgraphviz-dev pkg-config -y
 WORKDIR /root/
